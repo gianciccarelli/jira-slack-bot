@@ -1,18 +1,13 @@
-const { RTMClient } = require('@slack/rtm-api');
-const { WebClient } = require('@slack/web-api');
+const ngrok = require('ngrok');
+
+const slackEvents = require('./app');
 const { CONFIG } = require('./config');
 
-const rtm = new RTMClient(CONFIG.slackBotToken);
-const web = new WebClient(CONFIG.slackBotToken);
-
-
-(async () => {
-  // Connect to Slack
-  const { self, team } = await rtm.start();
-  console.log(self, team);
-  console.log(await web.users.conversations());
+(async function() {
+  
+  const url = await ngrok.connect(CONFIG.port);
+  console.log(`Event URL ${url}`);
+  slackEvents.start(CONFIG.port).then( () => {
+    console.log('Slackbot started');
+  });
 })();
-
-rtm.on('message', async () => {
-    console.log('bot started')
-});

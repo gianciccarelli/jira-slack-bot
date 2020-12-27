@@ -23,9 +23,11 @@
   },
   "homepage": "https://github.com/gianciccarelli/jira-slack-bot#readme",
   "dependencies": {
+    "@slack/events-api": "^2.3.4",
     "@slack/rtm-api": "^5.0.5",
     "@slack/web-api": "^5.14.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "ngrok": "^3.4.0"
   },
   "devDependencies": {
     "eslint": "^7.16.0",
