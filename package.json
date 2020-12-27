@@ -1,24 +1,38 @@
 {
-	"name": "jira-slack-bot",
-	"version": "1.0.0",
-	"description": "A jira slack bot",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/gianciccarelli/jira-slack-bot.git"
-	},
-	"keywords": [
-		"jira",
-		"slack",
-		"bot"
-	],
-	"author": "Gianluca Ciccarelli",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/gianciccarelli/jira-slack-bot/issues"
-	},
-	"homepage": "https://github.com/gianciccarelli/jira-slack-bot#readme"
+  "name": "jira-slack-bot",
+  "version": "1.0.0",
+  "description": "A jira slack bot",
+  "main": "src",
+  "scripts": {
+    "dev": "DEBUG=app:* nodemon src",
+    "start": "node src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gianciccarelli/jira-slack-bot.git"
+  },
+  "keywords": [
+    "jira",
+    "slack",
+    "bot"
+  ],
+  "author": "Gianluca Ciccarelli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gianciccarelli/jira-slack-bot/issues"
+  },
+  "homepage": "https://github.com/gianciccarelli/jira-slack-bot#readme",
+  "dependencies": {
+    "@slack/rtm-api": "^5.0.5",
+    "@slack/web-api": "^5.14.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
+  }
 }

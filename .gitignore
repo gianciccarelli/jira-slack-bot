@@ -1,0 +1,4 @@
+node_modules
+
+// DOTENV
+.env
